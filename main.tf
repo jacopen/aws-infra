@@ -15,7 +15,7 @@ terraform {
 }
 
 provider "aws" {
-  region  = "ap-northeast-1"
+  region = "ap-northeast-1"
 }
 
 resource "aws_instance" "test_server" {
@@ -23,6 +23,7 @@ resource "aws_instance" "test_server" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "TestInstance"
+    Name      = "TestInstance",
+    ManagedBy = "Terraform Cloud"
   }
 }
